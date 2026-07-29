@@ -78,8 +78,16 @@ export default function Services() {
           </p>
         </Reveal>
 
+        {/* Membership intro */}
+        <Reveal delay={100}>
+          <div className="mt-10 text-center">
+            <p className="font-display text-xl tracking-[0.3em] text-teal">Save More Every Month</p>
+            <h3 className="font-display mt-1 text-4xl text-ink sm:text-5xl">Join Our Membership</h3>
+          </div>
+        </Reveal>
+
         {/* Shield badge pricing */}
-        <div className="mt-12 flex flex-wrap justify-center gap-8 sm:gap-10">
+        <div className="mt-10 flex flex-wrap justify-center gap-8 sm:gap-10">
           {washPackages.map((pkg, i) => (
             <Reveal key={pkg.title} delay={i * 80}>
               <div className="flex flex-col items-center">
@@ -217,37 +225,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Membership CTA */}
-        <Reveal delay={100}>
-          <div id="membership" className="scroll-mt-20 mt-16 rounded-2xl bg-ink px-8 py-10 text-center text-white shadow-xl">
-            <p className="font-display text-xl tracking-[0.3em] text-teal-light">Save More Every Month</p>
-            <h3 className="font-display mt-2 text-4xl sm:text-5xl">Join Our Membership</h3>
-            <p className="mx-auto mt-4 max-w-xl text-white/75">
-              Unlimited washes, every day. Lock in your price and keep your car looking its best — no contracts, cancel anytime.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              {washPackages.map((pkg) => (
-                <div
-                  key={pkg.title}
-                  style={{ borderColor: pkg.borderColor + "44" }}
-                  className="rounded-xl border bg-white/10 px-6 py-4 text-center backdrop-blur"
-                >
-                  <p className="font-display text-lg text-teal-light">{pkg.title}</p>
-                  <p className="font-display mt-1 text-3xl text-white">
-                    ${pkg.monthly}
-                    <span className="text-base text-white/60">/mo</span>
-                  </p>
-                </div>
-              ))}
-            </div>
-            <a
-              href="tel:+19096200356"
-              className="mt-8 inline-block rounded-full bg-teal px-8 py-3.5 font-display text-xl tracking-wider text-white shadow-lg shadow-teal/40 transition-all hover:bg-teal-dark"
-            >
-              Call to Sign Up — (909) 620-0356
-            </a>
-          </div>
-        </Reveal>
       </div>
     </section>
   );
