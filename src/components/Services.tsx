@@ -6,8 +6,8 @@ const washPackages = [
   {
     title: "Basic",
     monthly: "19.99",
-    single: "9",
-    features: ["Exterior tunnel wash", "High-pressure rinse", "Blow dry"],
+    single: "10",
+    features: ["Tunnel Wash", "Power Dry"],
     gradient: "linear-gradient(180deg, #6B3A1F 0%, #A0602A 30%, #7A4820 65%, #3D1F0A 100%)",
     bannerBg: "rgba(30,12,4,0.85)",
     borderColor: "#CD8B4A",
@@ -21,7 +21,7 @@ const washPackages = [
     title: "Silver",
     monthly: "23.99",
     single: "12",
-    features: ["Everything in Basic", "Tire shine", "Spot-free rinse"],
+    features: ["Basic +", "Rim and Tire Clean", "Wheel Blaster"],
     gradient: "linear-gradient(180deg, #5A5A5A 0%, #B0B0B0 30%, #808080 65%, #3A3A3A 100%)",
     bannerBg: "rgba(20,20,20,0.85)",
     borderColor: "#D0D0D0",
@@ -35,7 +35,7 @@ const washPackages = [
     title: "Gold",
     monthly: "25.99",
     single: "15",
-    features: ["Everything in Silver", "Rain-X treatment", "Triple foam"],
+    features: ["Silver +", "80 HP Sonic Dryer", "Triple Foam"],
     gradient: "linear-gradient(180deg, #7A5800 0%, #D4A000 30%, #A07800 65%, #4A3000 100%)",
     bannerBg: "rgba(30,18,0,0.85)",
     borderColor: "#FFD700",
@@ -49,7 +49,7 @@ const washPackages = [
     title: "VIP",
     monthly: "29.99",
     single: "18",
-    features: ["Everything in Gold", "Ceramic sealant", "Tire dressing", "Air freshener"],
+    features: ["Gold +", "Ava Shine", "Step One Ceramics", "Step Two Ceramics", "Buff & Shine"],
     gradient: "linear-gradient(180deg, #1A1A2E 0%, #4A4A7A 30%, #2A2A50 65%, #0A0A1A 100%)",
     bannerBg: "rgba(8,8,20,0.9)",
     borderColor: "#A0A0F0",
@@ -122,7 +122,6 @@ export default function Services() {
                   <div
                     style={{
                       background: pkg.bannerBg,
-                      borderBottom: `1.5px solid ${pkg.borderColor}`,
                       padding: "10px 0 8px",
                       textAlign: "center",
                     }}
@@ -139,6 +138,27 @@ export default function Services() {
                     </span>
                   </div>
 
+                  {/* Unlimited Wash ribbon */}
+                  <div
+                    style={{
+                      background: pkg.borderColor,
+                      padding: "4px 0",
+                      textAlign: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#000",
+                        fontSize: 11,
+                        fontWeight: 700,
+                        letterSpacing: "0.2em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      ✦ Unlimited Wash ✦
+                    </span>
+                  </div>
+
                   {/* Price */}
                   <div
                     style={{
@@ -147,12 +167,12 @@ export default function Services() {
                       flexDirection: "column",
                       alignItems: "center",
                       justifyContent: "center",
-                      paddingBottom: 40,
+                      paddingBottom: 55,
                       gap: 2,
                     }}
                   >
                     {/* Monthly price */}
-                    <div style={{ display: "flex", alignItems: "flex-start", lineHeight: 1 }}>
+                    <div style={{ display: "flex", alignItems: "flex-start", lineHeight: 1, justifyContent: "center", width: "100%" }}>
                       <span
                         className="font-display"
                         style={{ color: pkg.priceColor, fontSize: 20, marginTop: 6 }}
@@ -213,7 +233,7 @@ export default function Services() {
                 </div>
 
                 {/* Features below badge */}
-                <ul className="mt-4 space-y-1 text-center">
+                <ul className="mt-4 space-y-1 text-left w-full px-2">
                   {pkg.features.map((f) => (
                     <li key={f} className="text-sm text-ink/70">
                       <span className="text-teal mr-1">✓</span>{f}

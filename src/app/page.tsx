@@ -16,7 +16,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-teal/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
             <div className="px-6 py-4 text-center">
               <p className="font-display text-lg tracking-widest text-teal">Open Daily</p>
-              <p className="font-semibold text-ink">7:00 AM – 8:00 PM</p>
+              <p className="font-semibold text-ink">8:00 AM – 7:00 PM</p>
             </div>
             <a href="tel:+19096200356" className="px-6 py-4 text-center transition-colors hover:bg-teal/5">
               <p className="font-display text-lg tracking-widest text-teal">Call Us</p>
@@ -81,7 +81,7 @@ export default function Home() {
                 <dl className="mt-4 space-y-2 text-ink/80">
                   <div className="flex justify-between border-b border-teal/15 pb-2">
                     <dt>Monday – Sunday</dt>
-                    <dd className="font-semibold text-ink">7:00 AM – 8:00 PM</dd>
+                    <dd className="font-semibold text-ink">8:00 AM – 7:00 PM</dd>
                   </div>
                 </dl>
                 <p className="mt-6 text-ink/80">
