@@ -42,6 +42,20 @@ export default function RootLayout({
     url: "https://www.route66washpo.com",
     telephone: "+19096200356",
     priceRange: "$19.99 - $29.99",
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "08:00",
+      closes: "19:00",
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "1650 W Holt Ave",
