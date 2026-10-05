@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description:
     "Express drive-thru car wash in Pomona, CA. Fast, automated tunnel washes with unlimited monthly memberships starting at $19.99.",
   icons: { icon: "/images/logo-new.png" },
+  alternates: {
+    canonical: "https://www.route66washpo.com/",
+  },
   openGraph: {
     title: "Route 66 Car Wash | Pomona, CA",
     description:
@@ -31,9 +34,36 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AutoWash",
+    name: "Route 66 Car Wash",
+    image: "https://www.route66washpo.com/images/hero-main.jpeg",
+    url: "https://www.route66washpo.com",
+    telephone: "+19096200356",
+    priceRange: "$19.99 - $29.99",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1650 W Holt Ave",
+      addressLocality: "Pomona",
+      addressRegion: "CA",
+      postalCode: "91768",
+      addressCountry: "US",
+    },
+    sameAs: [
+      // paste this location's actual Facebook / Instagram / X / Yelp URLs here
+    ],
+  };
+
   return (
     <html lang="en" className={`${bebas.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
